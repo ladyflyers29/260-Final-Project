@@ -14,13 +14,16 @@ public class Movement : MonoBehaviour {
     //Cached component references
     Rigidbody2D rb;
     Animator an;
-    Collider2D col;
+    CapsuleCollider2D bodyCol;
+    BoxCollider2D feetCol;
+    
 
     //methods
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         an = GetComponent<Animator>();
-        col = GetComponent<Collider2D>();
+        bodyCol = GetComponent<CapsuleCollider2D>();
+        feetCol = GetComponent<BoxCollider2D>();
 	}
 	
 	// Update is called once per frame
@@ -42,7 +45,7 @@ public class Movement : MonoBehaviour {
 
     private void Jump()
     {
-        if(!col.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if(!feetCol.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             return;
         }
