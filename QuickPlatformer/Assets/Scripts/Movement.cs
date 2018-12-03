@@ -14,11 +14,13 @@ public class Movement : MonoBehaviour {
     //Cached component references
     Rigidbody2D rb;
     Animator an;
+    Collider2D col;
 
     //methods
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         an = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
 	}
 	
 	// Update is called once per frame
@@ -40,6 +42,11 @@ public class Movement : MonoBehaviour {
 
     private void Jump()
     {
+        if(!col.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            return;
+        }
+
         if (CrossPlatformInputManager.GetButtonDown("Jump"))
         {
             Vector2 JumpVelocityToAdd = new Vector2(0f, jumpSpeed);
