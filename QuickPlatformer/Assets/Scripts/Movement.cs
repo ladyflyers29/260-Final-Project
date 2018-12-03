@@ -4,18 +4,28 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 public class Movement : MonoBehaviour {
 
+    //Config
     [SerializeField] float runSpeed = 20f;
-    Rigidbody2D rb;
+    [SerializeField] float jumpSpeed = 5f;
 
-	// Use this for initialization
+    //State
+    bool isAlive = true;
+
+    //Cached component references
+    Rigidbody2D rb;
+    Animator an;
+
+    //methods
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        an = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         Run();
-        Flip();
+        Jump();
+        FlipSprite();
 	}
 
     private void Run()
@@ -23,8 +33,22 @@ public class Movement : MonoBehaviour {
         float hMovement = CrossPlatformInputManager.GetAxis("Horizontal"); //value is between from -1 to +1
         Vector2 playerVelocity = new Vector2(hMovement * runSpeed, rb.velocity.y);
         rb.velocity = playerVelocity;
+
+        bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        an.SetBool("Running", playerHasHorizontalSpeed);
     }
-    private void Flip()
+
+    private void Jump()
+    {
+        if (CrossPlatformInputManager.GetButtonDown("Jump"))
+        {
+            Vector2 JumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+            rb.velocity += JumpVelocityToAdd;
+
+        }
+    }
+
+    private void FlipSprite()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         if(playerHasHorizontalSpeed)
@@ -32,4 +56,6 @@ public class Movement : MonoBehaviour {
             transform.localScale = new Vector2 (Mathf.Sign(rb.velocity.x) * 5, 5f);
         }
     }
+
+
 }

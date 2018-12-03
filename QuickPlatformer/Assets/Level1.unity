@@ -1716,36 +1716,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 50074439028849502, guid: 1797e797440b75d45874ec430ce25c6a,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50074439028849502, guid: 1797e797440b75d45874ec430ce25c6a,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1797e797440b75d45874ec430ce25c6a, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &551202585 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1559187425517320, guid: 1797e797440b75d45874ec430ce25c6a,
-    type: 2}
-  m_PrefabInternal: {fileID: 533045482}
---- !u!114 &551202591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 551202585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a119e8972800bba429be720469f6f19b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runSpeed: 20
 --- !u!1 &997279083
 GameObject:
   m_ObjectHideFlags: 0
