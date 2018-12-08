@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         enemyRB = GetComponent<Rigidbody2D>();
+        enemyRB.constraints = RigidbodyConstraints2D.FreezePositionX;
 	}
 	
 	// Update is called once per frame

@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour {
     [SerializeField] float jumpSpeed = 5f;
 
     //State
-
+ //   bool isAlive = true;
 
     //Cached component references
     Rigidbody2D rb;
@@ -28,6 +28,8 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+//        if (!isAlive) { return; }
+
         Run();
         Jump();
         FlipSprite();
@@ -66,4 +68,10 @@ public class Movement : MonoBehaviour {
             transform.localScale = new Vector2 (Mathf.Sign(rb.velocity.x) * 5, 5f);
         }
     }
+
+    //void Die()
+    //{
+    //    if (rb.IsTouchingLayers(LayerMask.GetMask("Enemy"))) ;
+    //}
+
 }
