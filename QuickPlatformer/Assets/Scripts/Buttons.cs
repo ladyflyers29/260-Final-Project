@@ -17,17 +17,17 @@ public class Buttons : MonoBehaviour {
 		
 	}
 
-    void ChangeSceneByName(string name)
+    public void ChangeSceneByName(string name)
     {
         SceneManager.LoadScene(name);
     }
     
-    void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
 
-    void ReloadScene()
+    public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

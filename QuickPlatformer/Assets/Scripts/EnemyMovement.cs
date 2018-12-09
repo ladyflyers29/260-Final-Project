@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
-    [SerializeField] float jumpSpeed = 15f;
+    [SerializeField] float jumpSpeed = 18f;
     Rigidbody2D enemyRB;
     private float lastJumpTime;
     private float jumpDelay = 5f;
