@@ -7,16 +7,6 @@ using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void ChangeSceneByName(string name)
     {
         SceneManager.LoadScene(name);
@@ -29,8 +19,13 @@ public class Buttons : MonoBehaviour {
 
     public void ReloadScene()
     {
+        FindObjectOfType<GameSession>().ResetGameSession();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void HideUI()
+    {
+        GameObject.Find("UI Canvas").SetActive(false);
+    }
 
 }

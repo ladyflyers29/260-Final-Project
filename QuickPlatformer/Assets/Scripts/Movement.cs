@@ -71,7 +71,11 @@ public class Movement : MonoBehaviour {
 
     //void Die()
     //{
-    //    if (rb.IsTouchingLayers(LayerMask.GetMask("Enemy"))) ;
+    //    if (rb.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")));
+    //    {
+           
+            
+    //    }
     //}
 
 }
