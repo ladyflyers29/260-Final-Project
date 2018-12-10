@@ -13,18 +13,18 @@ public class PlayerState : MonoBehaviour {
     void Start () {
         Time.timeScale = 1;
         isAlive = true;
-        deathScene = GameObject.Find("deathScene");
+        deathScene = GameObject.FindGameObjectWithTag("Death");
         deathScene.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (FindObjectOfType<GameSession>().playerLives  == 0)
+        if (FindObjectOfType<GameSession>().playerLives  == 0f)
         {
             isAlive = false;
             showDeathScreen();
         }
-	}
+    }
         
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -36,16 +36,8 @@ public class PlayerState : MonoBehaviour {
 
     void showDeathScreen()
     {
-        if (!isAlive)
-        {
-            Time.timeScale = 0;
-            deathScene.SetActive(true);
-         //   FindObjectOfType<GameSession>().ResetGameSession();
-        }
-        else if (isAlive)
-        {
-            Time.timeScale = 1;
-            deathScene.SetActive(false);
-        }
+        Time.timeScale = 0;
+        deathScene.SetActive(true);
+   //   FindObjectOfType<GameSession>().ResetGameSession();
     }
 }

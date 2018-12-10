@@ -9,7 +9,7 @@ public class EndLevel : MonoBehaviour {
 
     void Start()
     {
-       // endGameObject = GameObject.Find("EndGame");
+        endGameObject = GameObject.FindGameObjectWithTag("EndGame");
         endGameObject.SetActive(false);
     }
 

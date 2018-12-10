@@ -712,6 +712,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114184615789646862, guid: 1797e797440b75d45874ec430ce25c6a,
+        type: 2}
+      propertyPath: deathScene
+      value: 
+      objectReference: {fileID: 921058822}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1797e797440b75d45874ec430ce25c6a, type: 2}
   m_IsPrefabParent: 0
@@ -1322,6 +1327,11 @@ Transform:
   m_Father: {fileID: 946305771}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &921058822 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1377174751172518, guid: e5d14f7e1c0a1be409f038f29ecd0315,
+    type: 2}
+  m_PrefabInternal: {fileID: 342944188}
 --- !u!1001 &929603152
 Prefab:
   m_ObjectHideFlags: 0

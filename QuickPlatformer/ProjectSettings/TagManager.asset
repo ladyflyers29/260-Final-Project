@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Floor
+  - Death
+  - EndGame
   layers:
   - Default
   - TransparentFX
